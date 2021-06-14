@@ -4,7 +4,7 @@ import RootStore from "../stores/RootStore";
 import {observer, Provider} from "mobx-react";
 import styles from '../styles/index.module.scss'
 import Header from "../components/Header";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '/styles/custom.scss';
 
 const MyApp = observer(({Component, pageProps}: AppProps) => {
   const rootStore = new RootStore();
