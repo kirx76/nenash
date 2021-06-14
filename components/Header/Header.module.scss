@@ -1,0 +1,11 @@
+@import "./styles/library";
+@use "/styles/globals";
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 64px;
+  background-color: $olivine;
+  padding: 8px;
+}

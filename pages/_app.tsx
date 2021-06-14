@@ -1,7 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.scss'
+import type {AppProps} from 'next/app'
+import RootStore from "../stores/RootStore";
+import {observer, Provider} from "mobx-react";
+import styles from '../styles/index.module.scss'
+import Header from "../components/Header";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const MyApp = observer(({Component, pageProps}: AppProps) => {
+  const rootStore = new RootStore();
+
+  return <Provider {...rootStore}>
+    <div className={styles.Main}>
+      <Header/>
+      <Component {...pageProps} />
+    </div>
+  </Provider>
+});
+
 export default MyApp
